@@ -1,1 +1,17 @@
 * BiliBili 缓存视频提取
+** 简介
+   转换旧版安卓平台 BiliBili 缓存视频为 flv 格式。一方面转换视频格式，另一方面提取视频信息并以此进行目录和文件的命名。
+** 使用方法
+   本程序依赖于 Python3，调试版本为 3.9.6。调试使用的 Linux 版本为 5.10.49-1，安卓客户端版本为 5.37.0。用户可以选择将相关目录迁移至电脑上操作，也可以选择在手机上直接调用 Python。建议在手机上使用 [[https://github.com/termux/termux-app][Termux]]。
+   #+begin_src shell
+     python main.py -c /path/to/BiliBili_cache -o /path/to/save
+   #+end_src
+
+   BiliBili_cache 的目录结构：
+   #+begin_quote
+.
+├── 204455707
+└── 972121298
+   #+end_quote
+
+   也可以直接指定 tv.danmaku.bili/download 目录。客户端缓存位置可以修改以方便操作。
